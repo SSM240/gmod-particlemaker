@@ -30,7 +30,7 @@ This update includes some new features:
  - Particle emitters can now be duped and saved properly
  - Tool presets now save properly
  - Added horizontal acceleration settings
- - Added random velocity, size, and die time variance settings
+ - Added random variance settings for velocity, size, and die time
  - Added prop scale setting
 ]]
 

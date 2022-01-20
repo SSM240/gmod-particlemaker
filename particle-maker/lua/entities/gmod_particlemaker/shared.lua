@@ -23,6 +23,7 @@ ENT.Author		= "SirQuack"
 ENT.Contact		= "https://github.com/roelofr/GMod-ParticleMaker"
 
 function ENT:SetData(Data)
+	self.Entity.data = Data
 	for _,v in pairs(Data) do
 		if (v.Type == "Int") then
 			self.Entity:SetNetworkedInt(v.Name, v.Value)

@@ -177,10 +177,11 @@ function TOOL:LeftClick( Trace )
 
 	if not self:GetSWEP():CheckLimit("particle_makers") then return false end
 
-	local ParticleMaker = MakeParticle( Ply, Trace.HitPos, Data, Toggle, ToggleWiremod, Key, _3D )
 	local Angle = Trace.HitNormal:Angle()
-		Angle:RotateAroundAxis( Angle:Right(), -90 )
-	ParticleMaker:SetAngles( Angle )
+	Angle:RotateAroundAxis( Angle:Right(), -90 )
+
+	local ParticleMaker = MakeParticle( Ply, Trace.HitPos, Angle, Data, Toggle, ToggleWiremod, Key, _3D )
+	--ParticleMaker:SetAngles( Angle )
 
 	local Weld
 	if Trace.Entity:IsValid() then
@@ -225,7 +226,7 @@ if (SERVER) then
 		-- Nothing to see here
 	end
 
-	function MakeParticle(Ply, Pos, Data, Toggle, ToggleWiremod, Key, _3D)
+	function MakeParticle(Ply, Pos, Angle, data, Toggle, ToggleWiremod, Key, _3D)
 
 		if not Ply:CheckLimit("particle_makers") then return nil end
 
@@ -233,19 +234,22 @@ if (SERVER) then
 		if not ParticleMaker:IsValid() then return false end
 
 		ParticleMaker:SetPos(Pos)
+		ParticleMaker:SetAngles(Angle)
 		ParticleMaker:SetPlayer(Ply)
 		ParticleMaker:Spawn()
 		ParticleMaker:Activate()
 
 		ParticleMaker:SetOwner(Ply)
-		ParticleMaker:GetWiremodSettings( Data )
+		ParticleMaker:GetWiremodSettings( data )
 
-		SetValues(ParticleMaker, Data, Toggle, ToggleWiremod)
+		SetValues(ParticleMaker, data, Toggle, ToggleWiremod)
 
 		if (Key) then
 			numpad.OnDown(Ply, Key, "Particles_On", ParticleMaker)
 			numpad.OnUp(Ply, Key, "Particles_Off", ParticleMaker)
 		end
+		ParticleMaker.Entity.Key = Key -- todo: refactor lol
+		ParticleMaker.Entity._3D = _3D
 
 		if (Pos != Vector(0, 0, 0)) then
 			DoPropSpawnedEffect(ParticleMaker)
@@ -257,7 +261,7 @@ if (SERVER) then
 		return ParticleMaker
 
 	end
-
+	duplicator.RegisterEntityClass("gmod_particlemaker", MakeParticle, "Pos", "Angle", "data", "Toggle", "ToggleWiremod", "Key", "_3D")
 end
 
 function TOOL.BuildCPanel(CPanel)

@@ -25,11 +25,10 @@ if not SirQuack.ParticleMaker then SirQuack.ParticleMaker = {} end
 -- of the translators.
 
 local changesThisVersion = [[
-This update includes a lot of bug-fixes:
+This update includes some new features:
 
- - Fixed not being able to wire anything to the  particle maker
- - Fixed wierd "NOotice"-styled messages on some places
- - Fixed error message when trying to spawn particle maker when no material was selected.
+ - Added the ability to save and dupe particle emitters properly
+ - Added horizontal acceleration settings
 ]]
 
 --

@@ -1,0 +1,7 @@
+places to edit to add new features:
+    autorun/particlemaker_options.lua
+    autorun/particlemaker_presets.lua
+    effects/particle_custom/init.lua
+    entities/gmod_particlemaker/init.lua
+    weapons/gmod_tool/stools/particle_maker.lua
+    localization files

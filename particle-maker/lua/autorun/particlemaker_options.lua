@@ -84,6 +84,13 @@ SirQuack.ParticleMaker.getParticleOptions = function()
         Max = 10000
     },
     {
+        Name = "VelocityVariation",
+        Type = "Float",
+        Value = 0,
+        Min = 0,
+        Max = 10000
+    },
+    {
         Name = "Spread",
         Type = "Float",
         Value = 50,
@@ -98,6 +105,13 @@ SirQuack.ParticleMaker.getParticleOptions = function()
         Max = 10
     },
     {
+        Name = "DelayVariation",
+        Type = "Float",
+        Value = 0,
+        Min = 0,
+        Max = 10
+    },
+    {
         Name = "Number",
         Type = "Int",
         Value = 1,
@@ -108,6 +122,13 @@ SirQuack.ParticleMaker.getParticleOptions = function()
         Name = "DieTime",
         Type = "Float",
         Value = 3,
+        Min = 0,
+        Max = 10
+    },
+    {
+        Name = "DieTimeVariation",
+        Type = "Float",
+        Value = 0,
         Min = 0,
         Max = 10
     },
@@ -133,9 +154,23 @@ SirQuack.ParticleMaker.getParticleOptions = function()
         Max = 100
     },
     {
+        Name = "StartSizeVariation",
+        Type = "Float",
+        Value = 0,
+        Min = 0,
+        Max = 100
+    },
+    {
         Name = "EndSize",
         Type = "Float",
         Value = 20,
+        Min = 0,
+        Max = 100
+    },
+    {
+        Name = "EndSizeVariation",
+        Type = "Float",
+        Value = 0,
         Min = 0,
         Max = 100
     },

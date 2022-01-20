@@ -47,16 +47,21 @@ function ENT:UpdateInputs()
         -- Main properties change
     if WMD.Basic then
         table.insert( wireInputs, { "Velocity", "NORMAL" } )
+        table.insert( wireInputs, { "VelocityVariation", "NORMAL" } )
         table.insert( wireInputs, { "Delay", "NORMAL" } )
+        table.insert( wireInputs, { "DelayVariation", "NORMAL" } )
         table.insert( wireInputs, { "Spread", "NORMAL" } )
         table.insert( wireInputs, { "DieTime", "NORMAL" } )
+        table.insert( wireInputs, { "DieTimeVariation", "NORMAL" } )
     end
         -- Only when advanced
     if WMD.Effects then
         table.insert( wireInputs, { "StartAlpha", "NORMAL" } )
         table.insert( wireInputs, { "EndAlpha", "NORMAL" } )
         table.insert( wireInputs, { "StartSize", "NORMAL" } )
+        table.insert( wireInputs, { "StartSizeVariation", "NORMAL" } )
         table.insert( wireInputs, { "EndSize", "NORMAL" } )
+        table.insert( wireInputs, { "EndSizeVariation", "NORMAL" } )
         table.insert( wireInputs, { "StartLength", "NORMAL" } )
         table.insert( wireInputs, { "EndLength", "NORMAL" } )
     end

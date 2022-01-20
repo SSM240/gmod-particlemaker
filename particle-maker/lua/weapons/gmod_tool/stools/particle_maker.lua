@@ -407,7 +407,12 @@ function TOOL.BuildCPanel(CPanel)
     frm:NumSlider(
         "#tool.particle_maker.fire_delay",
         "particle_maker_Delay",
-        0.001, 10, 2
+        0.01, 10, 2
+    )
+    frm:NumSlider(
+        "#tool.particle_maker.fire_delay_variation",
+        "particle_maker_DelayVariation",
+        0, 10, 2
     )
 
     -- Number particles
@@ -423,6 +428,11 @@ function TOOL.BuildCPanel(CPanel)
         "particle_maker_Velocity",
         1, 10000, 0
     )
+    frm:NumSlider(
+        "#tool.particle_maker.velocity_variation",
+        "particle_maker_VelocityVariation",
+        0, 10000, 0
+    )
 
     -- Spread
     frm:NumSlider(
@@ -436,6 +446,11 @@ function TOOL.BuildCPanel(CPanel)
         "#tool.particle_maker.die_time",
         "particle_maker_DieTime",
         1, 10, 1
+    )
+    frm:NumSlider(
+        "#tool.particle_maker.die_time_variation",
+        "particle_maker_DieTimeVariation",
+        0, 10, 1
     )
 
     -- Start alpha
@@ -458,11 +473,21 @@ function TOOL.BuildCPanel(CPanel)
         "particle_maker_StartSize",
         0, 100, 1
     )
+    frm:NumSlider(
+        "#tool.particle_maker.size.start_variation",
+        "particle_maker_StartSizeVariation",
+        0, 100, 1
+    )
 
     -- End size
     frm:NumSlider(
         "#tool.particle_maker.size.end",
         "particle_maker_EndSize",
+        0, 100, 1
+    )
+    frm:NumSlider(
+        "#tool.particle_maker.size.end_variation",
+        "particle_maker_endSizeVariation",
         0, 100, 1
     )
 

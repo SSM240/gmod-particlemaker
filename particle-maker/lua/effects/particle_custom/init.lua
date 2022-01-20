@@ -144,14 +144,14 @@ function EFFECT:Think()
                             P:SetAngles(Ang:Angle())
                         end
 
-                        P:SetVelocity((Vec + Ang) * Data.Velocity)
+                        P:SetVelocity((Vec + Ang) * (Data.Velocity + math.Rand(0, Data.VelocityVariation)))
                         P:SetColor(unpack(RandColor))
                         P:SetColor(unpack(RandColor))
-                        P:SetDieTime(Data.DieTime)
+                        P:SetDieTime(Data.DieTime + math.Rand(0, Data.DieTimeVariation))
                         P:SetStartAlpha(Data.StartAlpha)
                         P:SetEndAlpha(Data.EndAlpha)
-                        P:SetStartSize(Data.StartSize)
-                        P:SetEndSize(Data.EndSize)
+                        P:SetStartSize(Data.StartSize + math.Rand(0, Data.StartSizeVariation))
+                        P:SetEndSize(Data.EndSize + math.Rand(0, Data.EndSizeVariation))
                         P:SetStartLength(Data.StartLength)
                         P:SetEndLength(Data.EndLength)
                         P:SetRoll(Data.RollRand * 36)
@@ -199,7 +199,7 @@ function EFFECT:Think()
                     end
                 end
 
-                Ent.NextShot = RealTime() + Data.Delay
+                Ent.NextShot = RealTime() + Data.Delay + math.Rand(0, Data.DelayVariation)
             end
 
             return true

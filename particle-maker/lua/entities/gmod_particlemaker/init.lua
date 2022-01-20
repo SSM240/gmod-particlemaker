@@ -224,6 +224,22 @@ function ENT:GetDelay()
     return self.Delay
 end
 
+function ENT:SetKey(b)
+    self.Key = b or false
+end
+
+function ENT:GetKey()
+    return self.Key
+end
+
+function ENT:Set3D(b)
+    self._3D = b or false
+end
+
+function ENT:Get3D()
+    return self._3D
+end
+
 function ENT:FireShot()
 
     local Pos = self.Entity:GetPos()

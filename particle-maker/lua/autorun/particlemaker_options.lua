@@ -20,159 +20,159 @@ if not SirQuack.ParticleMaker then SirQuack.ParticleMaker = {} end
 
 SirQuack.ParticleMaker.getParticleOptions = function()
     return {
-	{
+    {
         Name = "Material",
         Type = "String",
         Value = ""
     },
-	{
+    {
         Name = "ColorR1",
         Type = "Float",
         Value = 255,
         Min = 0,
         Max = 255
     },
-	{
+    {
         Name = "ColorG1",
         Type = "Float",
         Value = 255,
         Min = 0,
         Max = 255
     },
-	{
+    {
         Name = "ColorB1",
         Type = "Float",
         Value = 255,
         Min = 0,
         Max = 255
     },
-	{
+    {
         Name = "ColorR2",
         Type = "Float",
         Value = 255,
         Min = 0,
         Max = 255
     },
-	{
+    {
         Name = "ColorG2",
         Type = "Float",
         Value = 255,
         Min = 0,
         Max = 255
     },
-	{
+    {
         Name = "ColorB2",
         Type = "Float",
         Value = 255,
         Min = 0,
         Max = 255
     },
-	{
+    {
         Name = "ColorRand",
         Type = "Bool",
         Value = 0,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "Velocity",
         Type = "Float",
         Value = 500.01,
         Min = 0,
         Max = 10000
     },
-	{
+    {
         Name = "Spread",
         Type = "Float",
         Value = 50,
         Min = 0,
         Max = 360
     },
-	{
+    {
         Name = "Delay",
         Type = "Float",
         Value = 0.2,
         Min = 0.1,
         Max = 10
     },
-	{
+    {
         Name = "Number",
         Type = "Int",
         Value = 1,
         Min = 1,
         Max = 10
     },
-	{
+    {
         Name = "DieTime",
         Type = "Float",
         Value = 3,
         Min = 0,
         Max = 10
     },
-	{
+    {
         Name = "StartAlpha",
         Type = "Float",
         Value = 255,
         Min = 0,
         Max = 255
     },
-	{
+    {
         Name = "EndAlpha",
         Type = "Float",
         Value = 0,
         Min = 0,
         Max = 255
     },
-	{
+    {
         Name = "StartSize",
         Type = "Float",
         Value = 10,
         Min = 0,
         Max = 100
     },
-	{
+    {
         Name = "EndSize",
         Type = "Float",
         Value = 20,
         Min = 0,
         Max = 100
     },
-	{
+    {
         Name = "StartLength",
         Type = "Float",
         Value = 0,
         Min = 0,
         Max = 100
     },
-	{
+    {
         Name = "EndLength",
         Type = "Float",
         Value = 0,
         Min = 0,
         Max = 100
     },
-	{
+    {
         Name = "RollRand",
         Type = "Float",
         Value = 0,
         Min = 0,
         Max = 10
     },
-	{
+    {
         Name = "RollDelta",
         Type = "Float",
         Value = 0,
-        Min = -10
-        ,		Max =
-        10	},
-	{
+        Min = -10,
+        Max = 10
+    },
+    {
         Name = "AirResistance",
         Type = "Float",
         Value = 5,
         Min = 0,
         Max = 1000
     },
-	{
+    {
         Name = "Bounce",
         Type = "Float",
         Value = 0.2,
@@ -193,28 +193,28 @@ SirQuack.ParticleMaker.getParticleOptions = function()
         Min = -180,
         Max = 180
     },
-	{
+    {
         Name = "Gravity",
         Type = "Float",
         Value = -50,
         Min = -1000,
         Max = 1000
     },
-	{
+    {
         Name = "Collide",
         Type = "Bool",
         Value = 1,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "Lighting",
         Type = "Bool",
         Value = 0,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "Sliding",
         Type = "Bool",
         Value = 0,
@@ -222,84 +222,84 @@ SirQuack.ParticleMaker.getParticleOptions = function()
         Max = 1
     },
 
-	{
+    {
         Name = "3D",
         Type = "Bool",
         Value = 0,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "Align",
         Type = "Bool",
         Value = 1,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "Stick",
         Type = "Bool",
         Value = 1,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "DoubleSided",
         Type = "Bool",
         Value = 1,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "AngleVelX",
         Type = "Float",
         Value = 50,
-        Min = -500
-        ,		Max =
-        500	},
-	{
+        Min = -500,
+        Max = 500
+    },
+    {
         Name = "AngleVelY",
         Type = "Float",
         Value = 50,
-        Min = -500
-        ,		Max =
-        500	},
-	{
+        Min = -500,
+        Max = 500
+    },
+    {
         Name = "AngleVelZ",
         Type = "Float",
         Value = 50,
-        Min = -500
-        ,		Max =
-        500	},
-	{
+        Min = -500,
+        Max = 500
+    },
+    {
         Name = "StickLifeTime",
         Type = "Float",
         Value = 2,
         Min = 0.01,
         Max = 10
     },
-	{
+    {
         Name = "StickStartSize",
         Type = "Float",
         Value = 20,
         Min = 0,
         Max = 100
     },
-	{
+    {
         Name = "StickEndSize",
         Type = "Float",
         Value = 0,
         Min = 0,
         Max = 100
     },
-	{
+    {
         Name = "StickStartAlpha",
         Type = "Float",
         Value = 255,
         Min = 0,
         Max = 255
     },
-	{
+    {
         Name = "StickEndAlpha",
         Type = "Float",
         Value = 0,
@@ -307,35 +307,35 @@ SirQuack.ParticleMaker.getParticleOptions = function()
         Max = 255
     },
 
-	{
+    {
         Name = "wire_enabled",
         Type = "Bool",
         Value = 1,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "wire_basic",
         Type = "Bool",
         Value = 1,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "wire_colour",
         Type = "Bool",
         Value = 0,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "wire_effects",
         Type = "Bool",
         Value = 0,
         Min = 0,
         Max = 1
     },
-	{
+    {
         Name = "wire_advanced",
         Type = "Bool",
         Value = 0,

@@ -97,7 +97,7 @@ function EFFECT:Think()
         if Ent:GetNetworkedBool("Activated") and Ent.Emitter then
             if Ent.NextShot < RealTime() then
                 local Pos = Ent:GetPos()
-                Pos = Pos + Ent:GetUp() * 4
+                Pos = Pos + Ent:GetUp() * 4 * Ent:GetModelScale()
 
                 local Ang = Ent:GetUp()
 

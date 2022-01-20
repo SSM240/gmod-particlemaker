@@ -29,6 +29,7 @@ TOOL.Information = {
 -- The 'default' convars, will always be there
 TOOL.ClientConVar["Weld"]	= "1"
 TOOL.ClientConVar["Frozen"]	= "1"
+TOOL.ClientConVar["ModelScale"]	= "1"
 
 TOOL.ClientConVar["wire_enabled"]	= "1"
 TOOL.ClientConVar["wire_basic"]		= "1"
@@ -142,6 +143,8 @@ function TOOL:LeftClick( Trace )
     if CLIENT then return true end
 
     local Ply = self:GetOwner()
+    local ModelScale = self:GetClientNumber("ModelScale")
+    print("ModelScale: "..ModelScale)
     local _3D = self:GetClientNumber("3D") == 1
     local Toggle = self:GetClientNumber("Toggle") == 1
     local ToggleWiremod = self:GetClientNumber("Toggle_Wire") == 1
@@ -184,7 +187,7 @@ function TOOL:LeftClick( Trace )
     local Angle = Trace.HitNormal:Angle()
     Angle:RotateAroundAxis( Angle:Right(), -90 )
 
-    local ParticleMaker = MakeParticle( Ply, Trace.HitPos, Angle, Data, Toggle, ToggleWiremod, Key, _3D )
+    local ParticleMaker = MakeParticle( Ply, Trace.HitPos, Angle, ModelScale, Data, Toggle, ToggleWiremod, Key, _3D )
     --ParticleMaker:SetAngles( Angle )
 
     local Weld
@@ -230,7 +233,7 @@ if (SERVER) then
         -- Nothing to see here
     end
 
-    function MakeParticle(Ply, Pos, Angle, data, Toggle, ToggleWiremod, Key, _3D)
+    function MakeParticle(Ply, Pos, Angle, ModelScale, data, Toggle, ToggleWiremod, Key, _3D)
 
         if not Ply:CheckLimit("particle_makers") then return nil end
 
@@ -240,6 +243,7 @@ if (SERVER) then
         ParticleMaker:SetPos(Pos)
         ParticleMaker:SetAngles(Angle)
         ParticleMaker:SetPlayer(Ply)
+        ParticleMaker:SetModelScale(ModelScale or 1)
         ParticleMaker:Spawn()
         ParticleMaker:Activate()
 
@@ -263,7 +267,7 @@ if (SERVER) then
         return ParticleMaker
 
     end
-    duplicator.RegisterEntityClass("gmod_particlemaker", MakeParticle, "Pos", "Angle", "data", "Toggle", "ToggleWiremod", "Key", "_3D")
+    duplicator.RegisterEntityClass("gmod_particlemaker", MakeParticle, "Pos", "Angle", "ModelScale", "data", "Toggle", "ToggleWiremod", "Key", "_3D")
 end
 
 function TOOL.BuildCPanel(CPanel)
@@ -311,6 +315,13 @@ function TOOL.BuildCPanel(CPanel)
 
     -- Toggle
     frm:CheckBox("#tool.particle_maker.toggle", "particle_maker_Toggle")
+
+    -- Prop scale
+    frm:NumSlider(
+        "#tool.particle_maker.model_scale",
+        "particle_maker_ModelScale",
+        0.1, 2, 2
+    )
 
     -- Activation button
     local ctrl = vgui.Create("CtrlNumPad", frm)

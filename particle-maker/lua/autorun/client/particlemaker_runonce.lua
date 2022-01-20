@@ -27,8 +27,10 @@ if not SirQuack.ParticleMaker then SirQuack.ParticleMaker = {} end
 local changesThisVersion = [[
 This update includes some new features:
 
- - Added the ability to save and dupe particle emitters properly
+ - Particle emitters can now be duped and saved properly
  - Added horizontal acceleration settings
+ - Added random velocity, size, and die time variance settings
+ - Added prop scale setting
 ]]
 
 --

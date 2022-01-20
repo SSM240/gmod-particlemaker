@@ -22,7 +22,7 @@ Modifications copyright (c) 2022 SSM24
 if not ConVarExists("particle_maker_version") then
 
     CreateClientConVar(
-        "particle_maker_version", 3, true, false,
+        "particle_maker_version", 4, true, false,
         "Version number of the Particle Maker"
     )
 

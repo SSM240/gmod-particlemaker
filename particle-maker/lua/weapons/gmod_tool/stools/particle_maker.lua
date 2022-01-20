@@ -454,14 +454,14 @@ function TOOL.BuildCPanel(CPanel)
 	frm:NumSlider(
         "#tool.particle_maker.size.start",
         "particle_maker_StartSize",
-		0, 100, 0
+		0, 100, 1
 	)
 
 	-- End size
 	frm:NumSlider(
         "#tool.particle_maker.size.end",
         "particle_maker_EndSize",
-		0, 100, 0
+		0, 100, 1
 	)
 
 	-- Start length

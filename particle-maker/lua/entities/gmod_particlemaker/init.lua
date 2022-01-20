@@ -64,6 +64,8 @@ function ENT:UpdateInputs()
 		table.insert( wireInputs, { "RollDelta", "NORMAL" } )
 		table.insert( wireInputs, { "AirResistance", "NORMAL" } )
 		table.insert( wireInputs, { "Bounce", "NORMAL" } )
+		table.insert( wireInputs, { "HorizAccelMag", "NORMAL" } )
+		table.insert( wireInputs, { "HorizAccelAngle", "NORMAL" } )
 		table.insert( wireInputs, { "Gravity", "NORMAL" } )
 		table.insert( wireInputs, { "Collide", "NORMAL" } )
 		table.insert( wireInputs, { "Lighting", "NORMAL" } )
@@ -173,7 +175,6 @@ function ENT:TriggerInput(Name, Value)
 		end
 	end
 end
-
 
 function ENT:SetToggle(b)
 	self.Toggle = b or false

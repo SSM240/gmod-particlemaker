@@ -502,6 +502,17 @@ function TOOL.BuildCPanel(CPanel)
 		0, 10, 2
 	)
 
+	-- Horizontal acceleration
+	frm:NumSlider(
+        "#tool.particle_maker.horiz_accel_mag",
+        "particle_maker_HorizAccelMag",
+		0, 1000, 0
+	)
+	frm:NumSlider(
+        "#tool.particle_maker.horiz_accel_angle",
+        "particle_maker_HorizAccelAngle",
+		-180, 180, 0
+	)
 	-- Gravity
 	frm:NumSlider(
         "#tool.particle_maker.gravity",

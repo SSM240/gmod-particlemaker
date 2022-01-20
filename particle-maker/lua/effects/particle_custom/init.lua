@@ -156,9 +156,20 @@ function EFFECT:Think()
 						P:SetRollDelta(Data.RollDelta + RandRoll)
 						P:SetAirResistance(Data.AirResistance)
 						P:SetBounce(Data.Bounce)
-						P:SetGravity(Vector(0, 0, Data.Gravity))
 						P:SetCollide(Data.Collide)
 						P:SetLighting(Data.Lighting)
+						
+						local function VectorCylindrical(Mag, AngleDegrees, z)
+							if Mag == 0 then
+								return Vector(0, 0, z)
+							end
+							local AngleRadians = math.rad(AngleDegrees)
+							local x = Mag * math.cos(AngleRadians)
+							local y = Mag * math.sin(AngleRadians)
+							return Vector(x, y, z)
+						end
+
+						P:SetGravity(VectorCylindrical(Data.HorizAccelMag, Data.HorizAccelAngle, Data.Gravity))
 
 						if (Data.Sliding) then
 							P:SetCollideCallback(SlideCallback)
@@ -201,7 +212,6 @@ function EFFECT:Think()
 
 	return true
 end
-
 
 function EFFECT:Render()
 end

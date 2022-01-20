@@ -179,12 +179,27 @@ SirQuack.ParticleMaker.getParticleOptions = function()
         Min = 0,
         Max = 10
     },
+    {
+        Name = "HorizAccelMag",
+        Type = "Float",
+        Value = 0,
+        Min = 0,
+        Max = 1000
+    },
+    {
+        Name = "HorizAccelAngle",
+        Type = "Float",
+        Value = 0,
+        Min = -180,
+        Max = 180
+    },
 	{
         Name = "Gravity",
         Type = "Float",
         Value = -50,
         Min = -1000,
-        Max = 1000	},
+        Max = 1000
+    },
 	{
         Name = "Collide",
         Type = "Bool",

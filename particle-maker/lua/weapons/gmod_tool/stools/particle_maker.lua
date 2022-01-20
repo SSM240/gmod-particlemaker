@@ -291,7 +291,7 @@ function TOOL.BuildCPanel(CPanel)
     ctrl:SetPreset( PresetOptions.folder )
 
     for k, v in pairs( PresetOptions.options ) do ctrl:AddOption( k, v ) end
-    for k, v in pairs( PresetOptions.cvars ) do ctrl:AddConVar( k, v ) end
+    for _, v in pairs( PresetOptions.cvars ) do ctrl:AddConVar( v ) end
 
     frm:AddItem(ctrl)
 

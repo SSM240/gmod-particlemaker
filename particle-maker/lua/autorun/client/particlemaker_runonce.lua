@@ -32,6 +32,7 @@ This update includes some new features:
  - Added horizontal acceleration settings
  - Added random variance settings for velocity, size, and die time
  - Added prop scale setting
+ - Particle size can now be set to 1 decimal point
 ]]
 
 --

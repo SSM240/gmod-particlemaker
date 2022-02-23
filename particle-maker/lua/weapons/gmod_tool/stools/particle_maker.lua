@@ -456,7 +456,7 @@ function TOOL.BuildCPanel(CPanel)
     frm:NumSlider(
         "#tool.particle_maker.die_time",
         "particle_maker_DieTime",
-        1, 10, 1
+        0.1, 10, 1
     )
     frm:NumSlider(
         "#tool.particle_maker.die_time_variation",

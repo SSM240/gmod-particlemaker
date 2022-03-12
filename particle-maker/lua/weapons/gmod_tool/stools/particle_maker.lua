@@ -145,7 +145,6 @@ function TOOL:LeftClick( Trace )
 
     local Ply = self:GetOwner()
     local ModelScale = self:GetClientNumber("ModelScale")
-    print("ModelScale: "..ModelScale)
     local _3D = self:GetClientNumber("3D") == 1
     local Toggle = self:GetClientNumber("Toggle") == 1
     local ToggleWiremod = self:GetClientNumber("Toggle_Wire") == 1

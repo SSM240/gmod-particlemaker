@@ -120,10 +120,11 @@ function TOOL:GetValues()
     return Data
 end
 
-local function SetValues(Ent, Data, Toggle, ToggleWiremod, Key, _3D)
+local function SetValues(Ent, Data, Ply, Toggle, ToggleWiremod, Key, _3D)
     if (type(Data) == "table") then
         local PMTable = Ent:GetTable()
-
+        
+        PMTable:SetPlayer(Ply)
         PMTable:SetToggle(Toggle)
         PMTable:SetToggleWiremod(ToggleWiremod)
         PMTable:SetKey(Key)
@@ -176,7 +177,7 @@ function TOOL:LeftClick( Trace )
         Trace.Entity:GetClass() == "wire_particlemaker") and
         Trace.Entity:GetPlayer() == Ply
     ) then
-        SetValues(Trace.Entity, Data, Toggle, ToggleWiremod, Key, _3D)
+        SetValues(Trace.Entity, Data, Ply, Toggle, ToggleWiremod, Key, _3D)
         Trace.Entity:GetWiremodSettings( Data )
         DoPropSpawnedEffect(Trace.Entity)
         return true
@@ -248,10 +249,9 @@ if (SERVER) then
         ParticleMaker:Spawn()
         ParticleMaker:Activate()
 
-        ParticleMaker:SetOwner(Ply)
         ParticleMaker:GetWiremodSettings( data )
 
-        SetValues(ParticleMaker, data, Toggle, ToggleWiremod, Key, _3D)
+        SetValues(ParticleMaker, data, Ply, Toggle, ToggleWiremod, Key, _3D)
 
         if (Key) then
             numpad.OnDown(Ply, Key, "Particles_On", ParticleMaker)

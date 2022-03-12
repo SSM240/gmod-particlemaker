@@ -183,6 +183,13 @@ function ENT:TriggerInput(Name, Value)
     end
 end
 
+function ENT:SetPlayer(b)
+    self.Player = b or false
+end
+function ENT:GetPlayer(b)
+    return self.Player
+end
+
 function ENT:SetToggle(b)
     self.Toggle = b or false
 end

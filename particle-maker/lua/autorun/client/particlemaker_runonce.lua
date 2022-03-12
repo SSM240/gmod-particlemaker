@@ -25,7 +25,7 @@ if not SirQuack.ParticleMaker then SirQuack.ParticleMaker = {} end
 -- of the translators.
 
 local changesThisVersion = [[
-This update includes some new features:
+This update includes some new features and bug fixes:
 
  - Particle emitters can now be duped and saved properly
  - Tool presets now save properly
@@ -33,6 +33,7 @@ This update includes some new features:
  - Added random variance settings for velocity, size, delay, and die time
  - Added prop scale setting
  - Particle size can now be set to 1 decimal point
+ - Fixed physgun not working on particle makers
 ]]
 
 --

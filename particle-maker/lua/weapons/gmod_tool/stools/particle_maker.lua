@@ -249,7 +249,7 @@ if (SERVER) then
         ParticleMaker:SetAngles(Angle)
         ParticleMaker:SetPlayer(Ply)
         ParticleMaker:SetModelScale(ModelScale or 1)
-        ParticleMaker:SetCollisionGroup(COLLISION_GROUP_WORLD) -- no collide by default
+        ParticleMaker:SetCollisionGroup(COLLISION_GROUP_WORLD) -- no collide by default (TODO: make this a setting?)
         ParticleMaker:Spawn()
         ParticleMaker:Activate()
 

@@ -222,6 +222,11 @@ function TOOL:RightClick(Trace)
                 self:GetOwner():ConCommand(Command .. " " .. v.Value)
             end
         end
+        
+        if (Trace.Entity:GetKey()) then
+            print("command: particle_maker_Key" .. " " .. Trace.Entity:GetKey())
+            self:GetOwner():ConCommand("particle_maker_Key" .. " " .. Trace.Entity:GetKey())
+        end
 
         return true
     end
@@ -251,11 +256,6 @@ if (SERVER) then
         ParticleMaker:GetWiremodSettings( data )
 
         SetValues(ParticleMaker, data, Ply, Toggle, ToggleWiremod, Key, _3D)
-
-        if (Key) then
-            numpad.OnDown(Ply, Key, "Particles_On", ParticleMaker)
-            numpad.OnUp(Ply, Key, "Particles_Off", ParticleMaker)
-        end
 
         if (Pos != Vector(0, 0, 0)) then
             DoPropSpawnedEffect(ParticleMaker)

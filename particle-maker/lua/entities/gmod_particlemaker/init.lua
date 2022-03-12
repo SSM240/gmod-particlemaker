@@ -236,8 +236,19 @@ function ENT:GetDelay()
     return self.Delay
 end
 
-function ENT:SetKey(b)
-    self.Key = b or false
+function ENT:SetKey(Key)
+    self.Key = Key or false
+    if (self.numpadOnDown) then
+        numpad.Remove(self.numpadOnDown)
+    end
+    if (self.numpadOnUp) then
+        numpad.Remove(self.numpadOnUp)
+    end
+    if (Key) then
+        Ply = self:GetPlayer()
+        self.numpadOnDown = numpad.OnDown(Ply, Key, "Particles_On", self.Entity)
+        self.numpadOnUp = numpad.OnUp(Ply, Key, "Particles_Off", self.Entity)
+    end
 end
 
 function ENT:GetKey()
